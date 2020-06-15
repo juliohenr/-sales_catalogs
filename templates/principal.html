@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Vendedores</title>
+
+    <!--<link rel="stylesheet" href="css/libs/materialize.min.css">-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='google-fonts.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='materialize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='estilos.css') }}">
+
+    
+    
+
+</head>
+<body>
+    <div class = "container">
+
+            <h2 class="center">Catálogo Vendedores</h2>
+        
+            <a class="waves-effect waves-light btn" href = "{{ url_for('new_vendor')}}"><i class="material-icons left">add</i>Add vendor</a>
+     
+            
+            <div class="button-bar-search">
+
+            <a class="waves-effect waves-light btn button-confirm-search"><i class="material-icons left">search</i>Search</a>
+
+            <div class="container_button">
+
+                <input type="text" placeholder="Search Here!" class="search-input"/>
+                
+                <div class="suggestions">
+                
+                </div>
+                
+                
+            </div>
+
+        </div>
+
+
+
+            
+            <table class="centered bordered">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Name</th>
+                        <th>CNPJ</th>
+                        <th>City</th>
+                        <th>Products</th>
+                        <th>Edit</th>
+                        <th>Remove</th>
+                        
+
+                    </tr>
+
+
+                </thead>
+            
+                <tbody>
+
+                    <tr>
+                        <td>Douglas</td>
+                        <td>0123456789123456</td>
+                        <td>São Paulo</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+
+
+                    <tr>
+                        <td>Gabriel</td>
+                        <td>0123456789123456</td>
+                        <td>Rio de Janeiro</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Ronaldo</td>
+                        <td>0123456789123456</td>
+                        <td>Niterói</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+
+
+                    <tr>
+                        <td>Gustavo</td>
+                        <td>0123456789123456</td>
+                        <td>São Gonçalo</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td>Alessandro</td>
+                        <td>0123456789123456</td>
+                        <td>Bauru</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+
+
+                    <tr>
+                        <td>João</td>
+                        <td>0123456789123777</td>
+                        <td>Araçatuba</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        
+                    </tr>
+ 
+
+                </tbody>
+
+            </table>
+
+    </div>
+
+    
+
+
+    <script src="{{ url_for('static',filename='jquery.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ url_for('static',filename='main.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
+
+
+</body>
+</html>

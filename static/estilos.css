@@ -1,0 +1,158 @@
+
+
+.btn, .btn-large, .btn-small {
+
+    color: white;
+    background-color: #039be5;
+}
+
+
+.btn, .btn-large, .btn-small {
+
+    color: white;
+    background-color: #039be5;
+    border-radius: 6px !important;
+}
+
+.select-usuarios {
+    text-align: right;
+
+}
+
+#usuarios {
+    text-align: center;    
+}
+
+.selectize-input {
+
+    width: 150px;
+    height: 300px;
+    float:right;
+    vertical-align: middle;
+}
+
+
+
+.input-field, .col, .s6{
+    text-align: right;
+}
+
+.text-area-search{
+    float:right;
+    vertical-align: middle;
+    width: 500px;
+    height: 30px;
+}
+
+
+
+
+
+.container_button {
+    width: 73%;
+ 
+    background:white;
+    border-radius:6px;
+    vertical-align: middle;
+
+    float: left;
+
+}
+
+
+.search-input{
+    background:transparent;
+    border:0;
+    font-size:30px !important;
+    color:black;
+    width: 30%;
+    border-bottom:0px solid ;
+}
+
+
+.suggestions > div {
+
+    padding: 15px;
+    font-size: 20px;
+    color: black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    cursor: pointer;
+
+    background-color: rgb(245, 240, 240);
+    width: 370px;
+}
+
+
+.suggestions > div:hover {
+
+    background-color: #26a69a;
+
+}
+
+
+
+
+.suggestions{
+
+    position: absolute
+
+}
+
+
+
+.button-confirm-search {
+
+    float:right;
+    vertical-align: middle;
+    width: 25%;
+    border-radius: 6px !important;
+}
+
+.button-bar-search{
+
+    float:right;
+    width: 40%;
+
+
+}
+
+
+.botao-view:hover{
+
+    color: #26a69a;
+}
+
+
+
+.botao-edit:hover{
+
+    color: #26a69a;
+}
+
+
+.botao-remover:hover{
+
+    color: #26a69a;
+}
+
+.form-new-vendor{
+
+    width: 50%;
+}
+
+
+.button-back {
+    float:left;
+}
+
+.button-add-vendor{
+
+    float:right;
+}
+
+.buttons{
+
+    margin-top: 15px;
+}
