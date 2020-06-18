@@ -1,29 +1,37 @@
 from flask import Flask
-from flask_mysqldb import MySQL
 import os
 from flask import render_template, request,redirect, session, flash, url_for, send_from_directory
+from help_db import Catalogue_DB
+
 
 
 app = Flask(__name__)
 
+client_db = Catalogue_DB()
 
 @app.route('/')
 def index():
 
-    return render_template('principal.html')
+    documents = client_db.list_documents()
+
+    return render_template('principal.html',data=documents)
 
 @app.route('/new_vendor')
 def new_vendor():
 
     return render_template('new_vendor.html')
 
-@app.route('/criar', methods = ['POST',])
+@app.route('/save', methods = ['POST',])
 def criar():
 
     print(request.form)
     print("DATA Name FROM REQUEST: ",request.form["Name"])
     print("DATA CIty FROM REQUEST: ",request.form["City"])
     print("DATA CNPJ FROM REQUEST: ",request.form["CNPJ"])
+
+    client_db.insert_vendor(name=request.form["Name"],
+                            city=request.form["City"],
+                            cnpj=request.form["CNPJ"])
 
     return redirect(url_for('new_vendor'))
 

@@ -23,9 +23,10 @@
             
             <div class="button-bar-search">
 
-            <a class="waves-effect waves-light btn button-confirm-search"><i class="material-icons left">search</i>Search</a>
+                <a class="waves-effect waves-light btn button-confirm-search"><i class="material-icons left">search</i>Search</a>
 
             <div class="container_button">
+                
 
                 <input type="text" placeholder="Search Here!" class="search-input"/>
                 
@@ -62,6 +63,23 @@
             
                 <tbody>
 
+
+                    {% for document in data %}
+                    <tr>
+                        <td>{{ document.Name }}</td>
+                        <td>{{ document.CNPJ }}</td>
+                        <td>{{ document.City }}</td>
+                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                    </tr>
+    
+                    {% endfor %}
+
+
+
+
+                    <!---
                     <tr>
                         <td>Douglas</td>
                         <td>0123456789123456</td>
@@ -124,7 +142,7 @@
                         <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
                         
                     </tr>
- 
+                -->
 
                 </tbody>
 
