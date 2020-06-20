@@ -3,9 +3,13 @@ import os
 from flask import render_template, request,redirect, session, flash, url_for, send_from_directory
 from help_db import Catalogue_DB
 
+from flask_cors import CORS,cross_origin
+
 
 
 app = Flask(__name__)
+
+CORS(app, support_credentials=True)
 
 client_db = Catalogue_DB()
 
@@ -23,15 +27,35 @@ def new_vendor():
 
 @app.route('/save', methods = ['POST',])
 def criar():
+    
 
-    print(request.form)
-    print("DATA Name FROM REQUEST: ",request.form["Name"])
-    print("DATA CIty FROM REQUEST: ",request.form["City"])
-    print("DATA CNPJ FROM REQUEST: ",request.form["CNPJ"])
+    products = []
 
-    client_db.insert_vendor(name=request.form["Name"],
-                            city=request.form["City"],
-                            cnpj=request.form["CNPJ"])
+    keys_products = list(request.form)[3:]
+
+    for i in range(0,int(len(keys_products)/3)):
+
+        products.append({"name":request.form["products[{}][name]".format(i)],
+        
+                        "code":request.form["products[{}][code]".format(i)],
+
+                        "price":request.form["products[{}][price]".format(i)]})
+
+    print(keys_products)
+    print("DATA Name FROM REQUEST: ",request.form["name"])
+    print("DATA CIty FROM REQUEST: ",request.form["city"])
+    print("DATA CNPJ FROM REQUEST: ",request.form["cnpj"])
+    print("DATA PRODUCT FROM REQUEST: ",products)#request.form.getlist('products[]'))
+
+
+
+    #for i in range(0,len())
+
+
+    client_db.insert_vendor(name=request.form["name"],
+                            city=request.form["city"],
+                            cnpj=request.form["cnpj"],
+                            products = products)
 
     return redirect(url_for('new_vendor'))
 

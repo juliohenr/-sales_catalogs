@@ -23,25 +23,26 @@
 
     <h1 class="center">New Vendor</h1>
 
-    <form action="{{url_for('criar')}}" method="POST" >
+
 
 
     <div class="all_forms">
+
         <div class="form-new-vendor card-panel" >
 
         <h3>Vendor</h3>
 
         <h3 class="form-title">Name</h3>
 
-        <input type="text" name="Name" placeholder="WRITE NAME HERE" class="search-input" required/>
+        <input type="text" name="Name" placeholder="WRITE NAME HERE" class="search-input name-vendor" required/>
 
         <h3 class="form-title">City</h3>
 
-        <input type="text" name="City" placeholder="WRITE CITY HERE" class="search-input" required/>
+        <input type="text" name="City" placeholder="WRITE CITY HERE" class="search-input city-vendor" required/>
 
         <h3 class="form-title">CNPJ</h3>
 
-        <input type="text" name="CNPJ" placeholder="WRITE CNPJ HERE" class="search-input" required/>
+        <input type="text" name="CNPJ" placeholder="WRITE CNPJ HERE" class="search-input cnpj-vendor" required/>
 
           <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
         
@@ -55,15 +56,15 @@
 
             <h3 class="form-title">Name</h3>
     
-            <input type="text" placeholder="WRITE NAME HERE" class="search-input name-product" />
+            <input type="text" name="test" placeholder="WRITE NAME HERE" class="search-input name-product" />
     
             <h3 class="form-title">Code</h3>
     
-            <input type="text" placeholder="WRITE CODE HERE" class="search-input code-product" />
+            <input type="text"  name="test" placeholder="WRITE CODE HERE" class="search-input code-product" />
     
             <h3 class="form-title">Price</h3>
     
-            <input type="text" placeholder="WRITE PRICE HERE" class="search-input price-product" />
+            <input type="text" name="test" placeholder="WRITE PRICE HERE" class="search-input price-product" />
 
 
              <!--<button class="btn btn-primary button-add-product"><i class="material-icons left">add</i>Add Product</button>-->
@@ -84,7 +85,7 @@
        
             <a class="waves-effect waves-light btn-large" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>
             
-            <button class="btn btn-primary button-add-vendor" type="submit"><i class="material-icons left">save</i>Save</button>
+            <button class="btn btn-primary button-add-vendor" ><i class="material-icons left">save</i>Save</button>
         
         
             <!--<a class="waves-effect waves-light btn button-add-vendor" type="submit"><i class="material-icons left">add</i>Add vendor</a>-->
@@ -93,7 +94,7 @@
 
     </div>
         
-    </form>
+ 
 
     
     <h1 class="center">List Products</h1>
@@ -135,6 +136,7 @@
 <script type="text/javascript" src="{{ url_for('static',filename='main.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='button_add_product.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='send_data_add_vendor.js') }}"></script>
 
 
 

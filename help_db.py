@@ -13,14 +13,14 @@ class Catalogue_DB:
 
         return list(self.client["vendors"].find({}))
 
-    def insert_vendor(self,name,cnpj,city):
+    def insert_vendor(self,name,cnpj,city,products):
 
         self.client["vendors"].insert_one({
 
             'Name': name,
             'CNPJ':cnpj,
             'City': city,
-            'products': [{'name': 'generico', 'id': 123}]}
+            'products': products}
         )
 
     def search_name(self,name):
