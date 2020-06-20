@@ -26,7 +26,10 @@
     <form action="{{url_for('criar')}}" method="POST" >
 
 
-        <div class="form-new-vendor" >
+    <div class="all_forms">
+        <div class="form-new-vendor card-panel" >
+
+        <h3>Vendor</h3>
 
         <h3 class="form-title">Name</h3>
 
@@ -40,32 +43,98 @@
 
         <input type="text" name="CNPJ" placeholder="WRITE CNPJ HERE" class="search-input" required/>
 
+          <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
         
+        
+        </div>
+
+
+        <div class="form-new-product card-panel" >
+
+            <h3>Products</h3>
+
+            <h3 class="form-title">Name</h3>
+    
+            <input type="text" placeholder="WRITE NAME HERE" class="search-input name-product" />
+    
+            <h3 class="form-title">Code</h3>
+    
+            <input type="text" placeholder="WRITE CODE HERE" class="search-input code-product" />
+    
+            <h3 class="form-title">Price</h3>
+    
+            <input type="text" placeholder="WRITE PRICE HERE" class="search-input price-product" />
+
+
+             <!--<button class="btn btn-primary button-add-product"><i class="material-icons left">add</i>Add Product</button>-->
+    
+            <a class="waves-effect waves-light btn-small button-add-product" ><i class="material-icons left">add</i>Add Product</a>
+            
+              <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
+            
+            
+        </div>
+
+
         <div class="buttons">
 
-            <a class="waves-effect waves-light btn button-back" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>
-
-
+            <!--<a class="waves-effect waves-light btn button-back" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>-->
+        
+        
+       
+            <a class="waves-effect waves-light btn-large" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>
+            
             <button class="btn btn-primary button-add-vendor" type="submit"><i class="material-icons left">save</i>Save</button>
-
+        
         
             <!--<a class="waves-effect waves-light btn button-add-vendor" type="submit"><i class="material-icons left">add</i>Add vendor</a>-->
         
         </div>
 
-          <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
-        </div>
+    </div>
         
     </form>
 
+    
+    <h1 class="center">List Products</h1>
+
+
+
+    <table class="centered bordered listProducts">
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+                <th>Code</th>
+                <th>Price</th>
+                <th>Remove</th>
+
+
+            </tr>
+
+
+        </thead>
+    
+        <tbody class="tbody_products">
+
+
+    </tbody>
+
+</table>
+
 
 </div>
+
+
 
 
 <script src="{{ url_for('static',filename='jquery.js') }}"></script>
     
 <script type="text/javascript" src="{{ url_for('static',filename='main.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='button_add_product.js') }}"></script>
 
 
 

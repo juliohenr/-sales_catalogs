@@ -139,20 +139,54 @@
 
 .form-new-vendor{
 
-    width: 50%;
+    width: 49%;
+    float: left;
+    height: 590px;
+
+    
 }
 
 
-.button-back {
-    float:left;
+ 
+.form-new-product{
+
+    width: 49%;
+    float: right;
+    height: 590px;
 }
+
+
 
 .button-add-vendor{
 
+    height: 54px;
+    line-height: 54px;
+    font-size: 15px;
+    padding: 0 28px;
     float:right;
 }
 
+.button-add-product{
+
+    float:left;
+    margin-top: 15px;
+}
+
+
 .buttons{
 
-    margin-top: 15px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.form-title {
+
+    font-size: 30px;
+}
+
+.button-fill {
+
+    display: none;
+    background-color: #fff;
+    color: #fff;
 }
