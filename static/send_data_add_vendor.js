@@ -32,6 +32,10 @@ buttonAddProduct.on("click",function(){
 
     table.prepend(row)
 
+    $(".name-product").val("")
+    $(".code-product").val("")
+    $(".price-product").val("")
+
 
 })
 
@@ -96,6 +100,15 @@ button_send.on("click",function (){
     console.log("Done!")
 
     })
+
+    $(".name-vendor").val("")
+    $(".city-vendor").val("")
+    $(".cnpj-vendor").val("")
+
+
+    $(".tbody_products tr").remove()
+
+
 
 
 })
