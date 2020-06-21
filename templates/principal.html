@@ -65,14 +65,82 @@
 
 
                     {% for document in data %}
-                    <tr>
-                        <td>{{ document.Name }}</td>
-                        <td>{{ document.CNPJ }}</td>
-                        <td>{{ document.City }}</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
+                    <tr class="breakDown">
+                        <td class="name_column">{{ document.Name }}</td>
+                        <td class="cnpj_column">{{ document.CNPJ }}</td>
+                        <td class="city_column">{{ document.City }}</td>
+                        <td><a href="#" class="botao-view button-show-products"><i class="small material-icons">view_list</i></a></td>
                         <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
+                        <td><a href="#" class="botao-remover remove-button"><i class="small material-icons">delete</i></a></td>
+
+                    
                     </tr>
+
+                    <tr class="tr_collapse">
+                
+                        <th class="th_list_products_empty"></th>
+                        <th class="th_list_products_empty"></th>
+
+                        
+
+
+                        <th class="th_list_products">Product Name</th>
+                        <th class="th_list_products">Product Code</th>
+                        <th class="th_list_products">Product Price</th>
+                    </tr>
+                    
+                    
+                    {% for product in document.products %}
+
+
+                    <tr class="tr_collapse"> 
+
+                 
+
+                            <td class="td_list_products_empty"></td>
+                            <td class="td_list_products_empty">{{ index }}</td>
+                         
+                            <td class="td_list_products">{{ product.name }}</td>
+                            <td class="td_list_products">{{ product.code }}</td>
+                            <td class="td_list_products">{{ product.price }}</td>   
+
+
+                    
+                    
+                  </tr>
+               
+                  {% endfor %}
+          
+                    <!--</tr>
+
+                    <tr>
+
+                        <table>
+
+                            <thead>
+
+                                
+                                <th>Product Name</th>
+                                <th>Product CNPJ</th>
+                                <th>Product City</th>
+            
+
+
+                            </thead>
+
+                            <tbody>
+
+                                <td>{{ document.Name }}</td>
+                                <td>{{ document.CNPJ }}</td>
+                                <td>{{ document.City }}</td>
+
+
+                            </tbody>
+
+
+                        </table>
+
+                    </tr>-->
     
                     {% endfor %}
 
@@ -158,6 +226,7 @@
     <script type="text/javascript" src="{{ url_for('static',filename='main.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='button_add_product.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='send_data_add_vendor.js') }}"></script>
 
 
 </body>

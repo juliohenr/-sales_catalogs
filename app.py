@@ -26,7 +26,7 @@ def new_vendor():
     return render_template('new_vendor.html')
 
 @app.route('/save', methods = ['POST',])
-def criar():
+def save():
     
 
     products = []
@@ -58,6 +58,30 @@ def criar():
                             products = products)
 
     return redirect(url_for('new_vendor'))
+
+
+
+@app.route('/delete', methods = ['POST',])
+def delete():
+    
+
+
+    print("DATA Name FROM REQUEST: ",request.form["name"])
+    print("DATA CIty FROM REQUEST: ",request.form["city"])
+    print("DATA CNPJ FROM REQUEST: ",request.form["cnpj"])
+
+
+
+
+    #for i in range(0,len())
+
+
+    client_db.delete_vendor(cnpj=request.form["cnpj"],
+                            name =request.form["name"],
+                            city=request.form["city"])
+
+    return redirect(url_for('index'))
+
 
 
 if __name__ =='__main__':

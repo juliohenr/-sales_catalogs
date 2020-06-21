@@ -1,5 +1,70 @@
 var button_send = $(".button-add-vendor") 
 
+$(".button-show-products").on("click",function(){
+
+    event.preventDefault()
+
+    var row = $(this).parent().parent()
+
+    row.nextUntil("tr.breakDown").slideToggle(200)
+})
+
+
+$(".remove-button").click(removeLinha)
+
+
+
+
+function removeLinha(){
+
+    console.log("okay")
+
+    var row = $(this).parent().parent()
+
+
+
+    //
+    var row = $(this).parent().parent()
+
+    var column_cnpj = row.find(".cnpj_column")
+
+    var column_name = row.find(".name_column")
+
+    var column_city = row.find(".city_column")
+
+    data = {
+
+        name:column_name.text(),
+        city:column_city.text(),
+        cnpj:column_cnpj.text()
+
+    }
+
+
+    $.post("http://localhost:3000/delete",data,function(){
+        
+    
+    event.preventDefault()
+
+    //var row = $(this).parent().parent()
+
+    row.nextUntil("tr.breakDown").hide(200)
+
+    
+    row.fadeOut(1000)
+
+    setTimeout(function(){
+        
+        row.remove()
+
+    },1000)
+    
+    
+    console.log("teste concluido")})
+        
+    
+    }
+
 
 var buttonAddProduct = $(".button-add-product")
 
@@ -107,9 +172,6 @@ button_send.on("click",function (){
 
 
     $(".tbody_products tr").remove()
-
-
-
 
 })
 

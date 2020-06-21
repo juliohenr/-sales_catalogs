@@ -9,9 +9,12 @@ class Catalogue_DB:
         self.client = MongoClient("localhost",port=port)['sales-catalogue']
         
 
+
     def list_documents(self):
 
         return list(self.client["vendors"].find({}))
+
+
 
     def insert_vendor(self,name,cnpj,city,products):
 
@@ -22,6 +25,21 @@ class Catalogue_DB:
             'City': city,
             'products': products}
         )
+
+
+
+
+    def delete_vendor(self,name,cnpj,city):
+
+        self.client["vendors"].delete_one({
+
+            'Name': name,
+            'CNPJ':cnpj,
+            'City': city}
+        )
+
+
+
 
     def search_name(self,name):
 

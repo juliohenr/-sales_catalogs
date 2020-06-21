@@ -190,3 +190,42 @@
     background-color: #fff;
     color: #fff;
 }
+
+.th_list_products{
+
+    text-align: center;
+    background-color: rgb(236, 229, 229);
+   
+}
+
+.td_list_products{
+
+    text-align: center;
+    background-color: rgb(236, 229, 229);
+  
+}
+
+.td_list_products_empty {
+
+    border-bottom: 0px !important;
+    border: 0px white !important;
+
+    border-color: #fff !important;
+    
+
+   
+}
+
+.th_list_products_empty {
+
+    border-bottom: 0px !important;
+    border-color: #fff !important;
+    border-collapse:none !important;
+ 
+  
+}
+
+.tr_collapse {
+
+    display: none;
+}
