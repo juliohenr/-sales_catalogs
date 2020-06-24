@@ -66,12 +66,13 @@
 
                     {% for document in data %}
                     <tr class="breakDown">
-                        <td class="name_column">{{ document.Name }}</td>
-                        <td class="cnpj_column">{{ document.CNPJ }}</td>
-                        <td class="city_column">{{ document.City }}</td>
+                        <td class="name-column">{{ document.Name }}</td>
+                        <td class="cnpj-column">{{ document.CNPJ }}</td>
+                        <td class="city-column">{{ document.City }}</td>
                         <td><a href="#" class="botao-view button-show-products"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover remove-button"><i class="small material-icons">delete</i></a></td>
+                        <td><a href="{{ url_for('edit')}}" class="button-edit"><i class="small material-icons">edit</i></a></td>
+                        <td><a href="#" class="remove-button"><i class="small material-icons">delete</i></a></td>
+                        <td class="products-principal">{{document.products}}</td>
 
                     
                     </tr>
@@ -223,10 +224,10 @@
 
     <script src="{{ url_for('static',filename='jquery.js') }}"></script>
     
-    <script type="text/javascript" src="{{ url_for('static',filename='main.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='button_add_product.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='button_remove.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='send_data_add_vendor.js') }}"></script>
+
 
 
 </body>

@@ -41,6 +41,35 @@ class Catalogue_DB:
 
 
 
+    def update_vendor(self,name,cnpj,city,name_old,cnpj_old,city_old,products):
+
+
+        self.client["vendors"].update_one({
+
+            'Name': name_old,
+            'CNPJ':cnpj_old,
+            'City': city_old}, 
+
+            {"$set": {'Name': name,
+            'CNPJ':cnpj,
+            'City': city,
+            'products': products}}
+        )
+
+        print("CLIENT: ",self.client)
+
+
+        print([{
+
+            'Name': name_old,
+            'CNPJ':cnpj_old,
+            'City': city_old}, 
+
+            {"$set": {'Name': name,
+            'CNPJ':cnpj,
+            'City': city,
+            'products': products}}])
+
     def search_name(self,name):
 
         return self.client["vendors"].find_one({"name":name})
