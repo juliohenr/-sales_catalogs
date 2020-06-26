@@ -1,21 +1,75 @@
-var countries = [
+var names = []
 
-    {name:"USA"},
-    {name:"UK"},
-    {name:"BR"},
-    {name:"Russia"},
-    {name:"China"},
-    {name:"Inglaterra"},
-    {name:"Bolivia"}
-]
+
+var tableRegisters = $(".breakDown");
+
+tableRegisters.each(function(){names.push({name:$(this).find(".name-column").text()})})
 
 var searchInput = $(".search-input");
 
 var suggestionsPanel = $(".suggestions");
 
+var buttonSearch = $(".button-confirm-search")
+
+
+buttonSearch.on("click",function(){
+
+
+    tableRegisters.each(function(){
+
+        
+        
+        if ($(this).find(".name-column").text()!=$(".search-input").val()){
+
+
+            $(this).hide()
+
+
+        }
+    
+    
+    
+    
+    
+    })
+
+
+
+
+
+})
+
+
+
 searchInput.on("input", function(){
 
 
+    
+    tableRegisters.each(function(){
+
+        console.log($(this).find(".name-column").text())
+        console.log($(".search-input").val())
+        console.log("\n")
+        
+        
+        if ($(this).find(".name-column").text()!=$(".search-input").val()){
+
+
+            $(this).show()
+
+
+        }
+    
+    
+    
+    
+    
+    })
+    
+    
+    
+    
+    
     suggestionsPanel.text('')
 
     const input = searchInput.val()
@@ -24,17 +78,16 @@ searchInput.on("input", function(){
 
     if(input!=""){
 
-    console.log("entrei!")
 
     const input = searchInput.val()
 
 
-    var suggestions = countries.filter(function(country){
+    var suggestions = names.filter(function(name){
 
 
         var digitado = input.toLowerCase()
     
-        var comparavel = country.name.toLowerCase().substr(0,digitado.length)
+        var comparavel = name.name.toLowerCase().substr(0,digitado.length)
     
         
         return digitado==comparavel
