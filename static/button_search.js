@@ -47,10 +47,6 @@ searchInput.on("input", function(){
     
     tableRegisters.each(function(){
 
-        console.log($(this).find(".name-column").text())
-        console.log($(".search-input").val())
-        console.log("\n")
-        
         
         if ($(this).find(".name-column").text()!=$(".search-input").val()){
 
@@ -117,7 +113,6 @@ searchInput.on("input", function(){
 
         suggestionsPanel.append(singleSuggestion)
 
-        console.log(singleSuggestion)
 
     });}
 
@@ -132,9 +127,7 @@ searchInput.on("focus", function(){
     
     tableRegisters.each(function(){
 
-        console.log($(this).find(".name-column").text())
-        console.log($(".search-input").val())
-        console.log("\n")
+
         
         
         if ($(this).find(".name-column").text()!=$(".search-input").val()){
@@ -145,12 +138,6 @@ searchInput.on("focus", function(){
 
         }
 
-
-
-    
-    
-    
-    
     
     })
     
@@ -202,7 +189,6 @@ searchInput.on("focus", function(){
 
         suggestionsPanel.append(singleSuggestion)
 
-        console.log(singleSuggestion)
 
     });}
 
@@ -210,17 +196,8 @@ searchInput.on("focus", function(){
 
 
 
-
-
-
-
-
-
-
 $(".search-input").on("focusout",function(){
 
-
-    console.log("entrei body")
 
     setTimeout(function(){suggestionsPanel.text("")},500)
     

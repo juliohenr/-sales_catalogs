@@ -1,8 +1,11 @@
 
 
+
+
 var products_str = $(".edit-products").val().replace(/'/g,'"')
 
 var products = JSON.parse(products_str)
+
 
 var buttonAddProduct = $(".button-add-product")
 
@@ -45,7 +48,7 @@ buttonAddProduct.on("click",function(){
 button_edit.on("click",function (){
 
 
-    console.log(products)
+  
     var nameVendor = $(".name-vendor").val()
     var cityVendor = $(".city-vendor").val()
     var cnpjVendor = $(".cnpj-vendor").val()
@@ -67,12 +70,10 @@ button_edit.on("click",function (){
     }
 
 
-    console.log(data)
+
 
     $.post("http://localhost:3000/update",data,function(){
 
-
-    console.log("Done!")
 
     })
 
@@ -90,7 +91,6 @@ button_edit.on("click",function (){
 $(function(){
     $(".remove-button-products").on("click",function (){
 
-        console.log("teste concluido")
         
         var row = $(this).parent().parent()
 
@@ -98,16 +98,8 @@ $(function(){
         var code = row.find(".code-product").text()
         var price = row.find(".price-product").text()
 
-        console.log(name)
-        console.log(code)
-
-        console.log(price)
-
-
     
         event.preventDefault()
-    
-        //var row = $(this).parent().parent()
     
         
         row.fadeOut(1000)
@@ -118,7 +110,7 @@ $(function(){
     
         },1000)
 
-        console.log(products)
+   
 
         products = products.filter(function(product){
 
@@ -126,12 +118,8 @@ $(function(){
             return product.name!=name || product.code!=code || product.price!=price
     
     
-            //return country.name.toLowerCase().startsWith(input)
-    
         })
 
-        console.log(products)
-        
     
     })})
 
@@ -153,8 +141,7 @@ $(function(){
     
     
         var link = $("<a>").addClass("remove-button-products").attr("href","#").click(function (){
-    
-            console.log("teste concluido")
+
             
             var row = $(this).parent().parent()
     
@@ -210,45 +197,3 @@ $(function(){
         return row
     }
     
-
-    $(".button-edit").on("click",function (){
-
-
-        console.log("entrou!")
-        var row = $(this).parent().parent()
-        
-        
-        
-        var nameVendor = row.find(".name-column").text()
-        var cityVendor = row.find(".city-column").text()
-        var cnpjVendor = row.find(".cnpj-column").text()
-    
-        var products_str = row.find(".products-principal").text().replace(/'/g,'"')
-    
-        console.log(products_str)
-    
-        var products = JSON.parse(products_str)
-    
-        console.log(nameVendor)
-        console.log(cityVendor)
-        console.log(cnpjVendor)
-        console.log(products)
-    
-        data = {
-            name:nameVendor,
-            city:cityVendor,
-            cnpj:cnpjVendor,
-            products:products
-        }
-    
-    
-        $.post("http://localhost:3000/edit_data",data,function(){
-    
-    
-    
-        console.log("Done!")
-    
-        })
-    
-    
-    })

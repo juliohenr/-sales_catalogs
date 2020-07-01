@@ -6,16 +6,11 @@ $(".remove-button").click(removeLinha)
 
 function removeLinha(){
 
-    console.log("okay")
 
     
     var row = $(this).parent().parent()
 
-    console.log(row)
-
     var column_cnpj = row.find(".cnpj-column").text()
-
-    console.log(column_cnpj)
 
     var column_name = row.find(".name-column").text() 
 
@@ -30,8 +25,6 @@ function removeLinha(){
         cnpj:column_cnpj
 
     }
-
-    console.log(data)
 
 
     $.post("http://localhost:3000/delete",data,function(){
@@ -53,7 +46,7 @@ function removeLinha(){
     },1000)
     
     
-    console.log("teste concluido")})
+    })
         
     
     }

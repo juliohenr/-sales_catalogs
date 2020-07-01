@@ -58,7 +58,6 @@
 
         <input type="text" name="CNPJ" value = "{{ document.products }}" placeholder="WRITE CNPJ HERE" class="search-input edit-products old" />
 
-          <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
         
         
         </div>
@@ -82,29 +81,22 @@
     
             <input type="text" name="test" placeholder="WRITE PRICE HERE" class="search-input price-product" />
 
-
-             <!--<button class="btn btn-primary button-add-product"><i class="material-icons left">add</i>Add Product</button>-->
     
             <a class="waves-effect waves-light btn-small button-add-product" ><i class="material-icons left">add</i>Add Product</a>
             
-              <!--<button type="submit" class="btn btn-primary btn-salvar">Salvar</button>-->
             
             
         </div>
 
 
         <div class="buttons">
-
-            <!--<a class="waves-effect waves-light btn button-back" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>-->
-        
         
        
             <a class="waves-effect waves-light btn-large" href = "{{ url_for('index')}}"><i class="material-icons left">arrow_back</i>Back</a>
             
-            <button class="btn btn-primary button-edit-vendor" ><i class="material-icons left">edit</i>Edit</button>
         
+            <a class="btn btn-primary button-edit-vendor" href = "{{ url_for('index')}}" ><i class="material-icons left">edit</i>Edit</a>
         
-            <!--<a class="waves-effect waves-light btn button-add-vendor" type="submit"><i class="material-icons left">add</i>Add vendor</a>-->
         
         </div>
 
@@ -160,16 +152,9 @@
 </div>
 
 
-
-
 <script src="{{ url_for('static',filename='jquery.js') }}"></script>
     
-
 <script type="text/javascript" src="{{ url_for('static',filename='edit.js') }}"></script>
-
-<script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='button_remove.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static',filename='send_data_add_vendor.js') }}"></script>
 
 
 

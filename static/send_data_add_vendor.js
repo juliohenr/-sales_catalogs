@@ -1,29 +1,10 @@
 
-
-
-
-var button_send = $(".button-add-vendor") 
-
-
-
-
-
-$(".button-show-products").on("click",function(){
-
-    event.preventDefault()
-
-    var row = $(this).parent().parent()
-
-    row.nextUntil("tr.breakDown").slideToggle(200)
-})
-
-
-
-
-
 var buttonAddProduct = $(".button-add-product")
 
 var products = []
+
+var button_send = $(".button-add-vendor") 
+
 
 
 buttonAddProduct.on("click",function(){
@@ -79,7 +60,7 @@ function newRow(name,code,price){
 
     var link = $("<a>").addClass("remove-button-products").attr("href","#").click(function (){
 
-        console.log("teste concluido")
+
         
         var row = $(this).parent().parent()
 
@@ -140,21 +121,6 @@ function newRow(name,code,price){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 button_send.on("click",function (){
 
 
@@ -171,12 +137,12 @@ button_send.on("click",function (){
     }
 
 
-    console.log(data)
+
 
     $.post("http://localhost:3000/save",data,function(){
 
 
-    console.log("Done!")
+
 
     })
 
@@ -192,12 +158,10 @@ button_send.on("click",function (){
 
 
 
-
-
 $(".button-edit").on("click",function (){
 
 
-    console.log("entrou!")
+   
     var row = $(this).parent().parent()
     
     
@@ -208,14 +172,10 @@ $(".button-edit").on("click",function (){
 
     var products_str = row.find(".products-principal").text().replace(/'/g,'"')
 
-    console.log(products_str)
+
 
     var products = JSON.parse(products_str)
 
-    console.log(nameVendor)
-    console.log(cityVendor)
-    console.log(cnpjVendor)
-    console.log(products)
 
     data = {
         name:nameVendor,
@@ -229,12 +189,8 @@ $(".button-edit").on("click",function (){
 
 
 
-    console.log("Done!")
 
     })
 
 
 })
-
-
-

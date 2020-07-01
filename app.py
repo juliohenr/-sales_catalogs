@@ -57,8 +57,6 @@ def edit():
 
     documents = info['data']
 
-    print("DOCUMENTS: ",documents)
-
 
     return render_template('edit.html',data=documents)
 
@@ -94,11 +92,6 @@ def update():
                 'products':products}
 
 
-    
-
-    print("DOCUMENTS: ",documents)
-
-
     client_db.update_vendor(name=request.form["name"],
                         city=request.form["city"],
                         cnpj=request.form["cnpj"],
@@ -130,16 +123,6 @@ def save():
 
                         "price":request.form["products[{}][price]".format(i)]})
 
-    print(keys_products)
-    print("DATA Name FROM REQUEST: ",request.form["name"])
-    print("DATA CIty FROM REQUEST: ",request.form["city"])
-    print("DATA CNPJ FROM REQUEST: ",request.form["cnpj"])
-    print("DATA PRODUCT FROM REQUEST: ",products)#request.form.getlist('products[]'))
-
-
-
-    #for i in range(0,len())
-
 
     client_db.insert_vendor(name=request.form["name"],
                             city=request.form["city"],
@@ -152,17 +135,6 @@ def save():
 
 @app.route('/delete', methods = ['POST',])
 def delete():
-    
-
-
-    print("DATA Name FROM REQUEST: ",request.form["name"])
-    print("DATA CIty FROM REQUEST: ",request.form["city"])
-    print("DATA CNPJ FROM REQUEST: ",request.form["cnpj"])
-
-
-
-
-    #for i in range(0,len())
 
 
     client_db.delete_vendor(cnpj=request.form["cnpj"],

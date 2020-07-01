@@ -2,9 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo de Vendedores</title>
+    <title>Vendor Catalogue</title>
 
-    <!--<link rel="stylesheet" href="css/libs/materialize.min.css">-->
     <link rel="stylesheet" href="{{ url_for('static',filename='google-fonts.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='materialize.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='estilos.css') }}">
@@ -16,7 +15,7 @@
 <body>
     <div class = "container">
 
-            <h2 class="center">Catálogo Vendedores</h2>
+            <h2 class="center">Vendor Catalogue</h2>
         
             <a class="waves-effect waves-light btn" href = "{{ url_for('new_vendor')}}"><i class="material-icons left">add</i>Add vendor</a>
      
@@ -112,106 +111,10 @@
                
                   {% endfor %}
           
-                    <!--</tr>
 
-                    <tr>
-
-                        <table>
-
-                            <thead>
-
-                                
-                                <th>Product Name</th>
-                                <th>Product CNPJ</th>
-                                <th>Product City</th>
-            
-
-
-                            </thead>
-
-                            <tbody>
-
-                                <td>{{ document.Name }}</td>
-                                <td>{{ document.CNPJ }}</td>
-                                <td>{{ document.City }}</td>
-
-
-                            </tbody>
-
-
-                        </table>
-
-                    </tr>-->
     
                     {% endfor %}
 
-
-
-
-                    <!---
-                    <tr>
-                        <td>Douglas</td>
-                        <td>0123456789123456</td>
-                        <td>São Paulo</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-
-
-                    <tr>
-                        <td>Gabriel</td>
-                        <td>0123456789123456</td>
-                        <td>Rio de Janeiro</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-
-                    <tr>
-                        <td>Ronaldo</td>
-                        <td>0123456789123456</td>
-                        <td>Niterói</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-
-
-                    <tr>
-                        <td>Gustavo</td>
-                        <td>0123456789123456</td>
-                        <td>São Gonçalo</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-
-                    <tr>
-                        <td>Alessandro</td>
-                        <td>0123456789123456</td>
-                        <td>Bauru</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-
-
-                    <tr>
-                        <td>João</td>
-                        <td>0123456789123777</td>
-                        <td>Araçatuba</td>
-                        <td><a href="#" class="botao-view"><i class="small material-icons">view_list</i></a></td>
-                        <td><a href="#" class="botao-edit"><i class="small material-icons">edit</i></a></td>
-                        <td><a href="#" class="botao-remover"><i class="small material-icons">delete</i></a></td>
-                        
-                    </tr>
-                -->
 
                 </tbody>
 
@@ -226,9 +129,10 @@
     
     <script type="text/javascript" src="{{ url_for('static',filename='button_search.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='button_remove.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='show_products.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='send_data_add_vendor.js') }}"></script>
-
+  
 
 
 </body>
-</html>
+</html
